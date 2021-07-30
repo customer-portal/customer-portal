@@ -1,14 +1,14 @@
 import Layout from "../components/layout";
 import { useQuery } from "@apollo/client";
-import { BusinessOwners } from "../graphql/queries";
+import { TransactionList } from "../graphql/queries";
 import { initializeApollo } from "../apollo/client";
 
 export default function Page() {
   const {
     loading,
     error,
-    data: { businessOwner },
-  } = useQuery(BusinessOwners);
+    data: { transactionsList},
+  } = useQuery(TransactionList);
 
   if (loading || error) {
     return <h1>Error</h1>;
@@ -16,8 +16,8 @@ export default function Page() {
 
   return (
     <Layout>
-      <h1>Business Owners</h1>
-      <pre>{JSON.stringify(businessOwner, null, 2)}</pre>
+      <h1>Transactions List</h1>
+      <pre>{JSON.stringify(transactionsList, null, 2)}</pre>
     </Layout>
   );
 }
@@ -26,7 +26,7 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo();
 
   await apolloClient.query({
-    query: BusinessOwners,
+    query: TransactionList,
   });
 
   return {
