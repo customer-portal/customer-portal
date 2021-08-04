@@ -7,7 +7,6 @@ import styles from './header.module.css'
 // rendering, and avoids any flash incorrect content on initial page load.
 export default function Header () {
   const [ session, loading ] = useSession()
-  
   return (
     <header>
       <noscript>

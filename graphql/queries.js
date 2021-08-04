@@ -26,6 +26,18 @@ const TransactionList = gql`
   }
 `;
 
+const GetUserByEmail = gql`
+  query GetUserByEmail($email: String!, $authToken: uuid!) {
+    customer(
+      where: { email: { _eq: $email }, authToken: { _eq: $authToken } }
+    ) {
+      id
+      name
+      email
+      paymentMethod
+      authToken
+    }
+  }
+`;
 
-
-export {BusinessOwners,TransactionList};
+export { BusinessOwners, TransactionList, GetUserByEmail };
