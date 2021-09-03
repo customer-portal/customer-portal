@@ -1,4 +1,4 @@
-import { signIn, signout, useSession } from "next-auth/client";
+import { signIn, signOut, useSession } from "next-auth/client";
 import Link from "next/link";
 import styles from "./header.module.css";
 import React from "react";
