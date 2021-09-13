@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import { CircularProgress,Button } from "@material-ui/core";
+import { CircularProgress, Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
 import {
@@ -14,8 +14,8 @@ import {
 } from "next-auth/client";
 
 const Home = styled.div`
-  width: 99vw;
-  height: 98vh;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   background-color: red;
   display: flex;
@@ -36,27 +36,17 @@ const Home = styled.div`
   }
 `;
 
-const Signin = () => {
+const Loading = () => {
   return (
     <Home>
       <Card className="card">
         <CardContent>
           <Image src="/deskera.svg" width="100" height="100" />
           <Typography className="title" color="secondary">
-            Customer Portal
+            Loading
           </Typography>
           <CardActions className="card">
-            <Button
-              variant="contained"
-              color="secondary"
-              href={`/api/auth/signin`}
-              onClick={(e) => {
-                e.preventDefault();
-                signIn();
-              }}
-            >
-              Sign in
-            </Button>
+            <CircularProgress color="secondary" />
           </CardActions>
         </CardContent>
       </Card>
@@ -64,4 +54,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Loading;
