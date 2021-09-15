@@ -6,6 +6,8 @@ import { Box, Card, CardContent, Typography } from "@material-ui/core";
 import { PaymentHeader } from "../components/paymentHeader";
 import { AccountBalance, FormatQuote, Payment } from "@material-ui/icons";
 
+import { RzPayButton } from "../components/paymentsMethods/RzPayButton";
+
 const columns = [
   { field: "documentSequenceCode", headerName: "Number", width: 200 },
   { field: "contact", headerName: "Contact", width: 200 },
@@ -61,26 +63,58 @@ export default function Payments({ initalData }) {
       <div style={{ height: 400, width: "100%" }}>
         {/* <div>{JSON.stringify(data, null, 2)}</div> */}
         <PaymentHeader />
-        <Box style={{display:`flex`, justifyContent:`space-evenly`,padding:`10px`}}>
-          <Card margin="auto" style={{width:`25vw`,height:`80px`,marginLeft:`1rem`}}>
-            <CardContent style={{display:`flex`, alignItems:`center`}}>
-              <AccountBalance fontSize="large" color="secondary" style={{marginLeft:`10px`,marginRight:`10px`}}/>
-              <Typography variant="h6" color="secondary">Total Transactions: 320</Typography>
+        <Box
+          style={{
+            display: `flex`,
+            justifyContent: `space-evenly`,
+            padding: `10px`,
+          }}
+        >
+          <Card
+            margin="auto"
+            style={{ width: `25vw`, height: `80px`, marginLeft: `1rem` }}
+          >
+            <CardContent style={{ display: `flex`, alignItems: `center` }}>
+              <AccountBalance
+                fontSize="large"
+                color="secondary"
+                style={{ marginLeft: `10px`, marginRight: `10px` }}
+              />
+              <Typography variant="h6" color="secondary">
+                Total Transactions: 320
+              </Typography>
             </CardContent>
           </Card>
-          <Card margin="auto" style={{width:`25vw`,height:`80px`,marginLeft:`1rem`}}>
-            <CardContent style={{display:`flex`, alignItems:`center`}}>
-            <FormatQuote fontSize="large" color="secondary" style={{marginLeft:`10px`,marginRight:`10px`}}/>
-              <Typography variant="h6" color="secondary">Total Quotes: 20</Typography>
+          <Card
+            margin="auto"
+            style={{ width: `25vw`, height: `80px`, marginLeft: `1rem` }}
+          >
+            <CardContent style={{ display: `flex`, alignItems: `center` }}>
+              <FormatQuote
+                fontSize="large"
+                color="secondary"
+                style={{ marginLeft: `10px`, marginRight: `10px` }}
+              />
+              <Typography variant="h6" color="secondary">
+                Total Quotes: 20
+              </Typography>
             </CardContent>
           </Card>
-          <Card margin="auto" style={{width:`25vw`,height:`80px`,marginLeft:`1rem`}}>
-            <CardContent style={{display:`flex`, alignItems:`center`}}>
-              <Payment fontSize="large" color="secondary" style={{marginLeft:`10px`,marginRight:`10px`}}/>
-              <Typography variant="h6" color="secondary">Payments</Typography>
+          <Card
+            margin="auto"
+            style={{ width: `25vw`, height: `80px`, marginLeft: `1rem` }}
+          >
+            <CardContent style={{ display: `flex`, alignItems: `center` }}>
+              <Payment
+                fontSize="large"
+                color="secondary"
+                style={{ marginLeft: `10px`, marginRight: `10px` }}
+              />
+              <Typography variant="h6" color="secondary">
+                Payments
+              </Typography>
             </CardContent>
           </Card>
-
         </Box>
         <DataGrid
           rows={data}
@@ -89,6 +123,7 @@ export default function Payments({ initalData }) {
           checkboxSelection
           disableSelectionOnClick
         />
+        <RzPayButton />
       </div>
     </Layout>
   );
