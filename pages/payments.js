@@ -7,6 +7,7 @@ import { PaymentHeader } from "../components/paymentHeader";
 import { AccountBalance, FormatQuote, Payment } from "@material-ui/icons";
 
 import { RzPayButton } from "../components/paymentsMethods/RzPayButton";
+import MakePaymentModal from "../components/modal";
 
 const columns = [
   { field: "documentSequenceCode", headerName: "Number", width: 200 },
@@ -123,6 +124,7 @@ export default function Payments({ initalData }) {
           checkboxSelection
           disableSelectionOnClick
         />
+        <MakePaymentModal />
         <RzPayButton />
       </div>
     </Layout>
